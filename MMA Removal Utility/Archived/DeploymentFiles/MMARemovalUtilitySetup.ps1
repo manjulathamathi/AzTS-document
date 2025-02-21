@@ -1733,7 +1733,7 @@ function Grant-AzTSMMARemediationIdentityAccessOnKeyVault
 
                 Write-Host "Creating monitoring alerts..." -ForegroundColor $([Constants]::MessageType.Info) 
                 $EmailReceivers = @()
-                 $SendAlertsToEmailIds | ForEach-Object {
+                $SendAlertsToEmailIds | ForEach-Object {
                     $EmailReceivers += New-AzActionGroupReceiver -Name "Notify_$($_)" -EmailReceiver -EmailAddress $_
                 }
 
